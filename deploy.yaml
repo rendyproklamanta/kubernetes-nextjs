@@ -25,19 +25,19 @@ spec:
           ports:
             - containerPort: 3000
           imagePullPolicy: Always
-          # readinessProbe:
-          #   httpGet:
-          #     path: /api/health
-          #     port: 3000
-          #   periodSeconds: 5
-          #   timeoutSeconds: 1
-          # livenessProbe:
-          #   httpGet:
-          #     path: /api/health
-          #     port: 3000
-          #   periodSeconds: 5
-          #   timeoutSeconds: 1
-          #   initialDelaySeconds: 45
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            periodSeconds: 5
+            timeoutSeconds: 1
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            periodSeconds: 5
+            timeoutSeconds: 1
+            initialDelaySeconds: 45
           env:
             - name: STARTUP_DELAY_SECONDS
               value: "40"
