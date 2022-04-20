@@ -52,7 +52,7 @@ jobs:
         with:
           config: ${{ secrets.KUBE_CONFIG }}
           version: latest
-          args: apply -f kubernetes/deploy.yaml
+          args: apply -f deploy.yaml
 
       - name: Rolling Update Image
         uses: myrotvorets/kubectl-action@2.0.0
